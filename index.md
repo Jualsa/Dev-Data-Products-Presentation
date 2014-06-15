@@ -1,0 +1,82 @@
+---
+title       : Miles/gallon Prediction
+subtitle    : Course Project - Developing Data Products
+author      : jass
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Summary
+
+The app is a simple app to predict Miles/gallon for a car with the selected predictors and values for that predictors, based on mtcars dataset:
+
+1. Select predictors
+2. Select values for the predictors'
+3. Submit and get the prediction results'
+
+--- .class #id 
+
+##  Gallery
+
+<img height='560' src="Sin-nombre.jpg" />
+
+--- 
+
+## Example 
+
+If you select Cylinders and Horsepower in the checkbox, the model fitted will be
+
+
+```r
+fit <- lm(mpg ~ cyl + hp, data = mtcars)
+fit
+```
+
+```
+## 
+## Call:
+## lm(formula = mpg ~ cyl + hp, data = mtcars)
+## 
+## Coefficients:
+## (Intercept)          cyl           hp  
+##     36.9083      -2.2647      -0.0191
+```
+
+
+---
+
+## Results
+
+For example, with that model selected, and values     
+- Number of cylinders=8     
+- Horsepower=250   
+
+the prediction for miles per gallon will be:
+
+
+```r
+pred <- predict(fit, data.frame(cyl = 8, hp = 250))
+pred
+```
+
+```
+##     1 
+## 14.01
+```
+
+
+--- 
+
+## Github repo
+
+The code for this app can be found here:   
+
+https://github.com/Jualsa/Dev-Data-Products.git  
+
+
+
